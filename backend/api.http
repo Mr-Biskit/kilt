@@ -6,7 +6,7 @@ POST http://localhost:8000/api/v1/auth/register
 Content-Type: application/json
 
 {
-      "email": "gabe@gmail.com"
+      "email": "chiru@gmail.com"
 }    
 
 ### Login
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 {
       "senderId":"6458b485264f3eb05e7f333f",
-      "receiverId":"6458bf1528c2ebf30ee34dcd"
+      "receiverId":"6459e96b08d4a18fa3802f00"
 }
 
 ### Find One User Chat 
@@ -43,5 +43,16 @@ Content-Type: application/json
 {
       "chatId":"6458c00a47d39b2e6c2825d0",
       "senderId":"6458b485264f3eb05e7f333f",
-      "text":"Hello"
+      "text":"Hello Again"
 }
+
+### Find All Message
+
+GET http://localhost:8000/api/v1/message/6458c00a47d39b2e6c2825d0
+
+### GET USER
+
+GET http://localhost:8000/api/v1/user/6458b485264f3eb05e7f333f
+
+
+

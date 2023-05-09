@@ -6,13 +6,13 @@ import { FC } from "react";
 interface pageProps {}
 
 const page: FC<pageProps> = ({}) => {
-  return (
-    <div className="flex">
-      <SideBar />
-      <ChatBar />
-      <ContentContainer />
-    </div>
-  );
+    return (
+        <div className="flex">
+            <SideBar />
+            <ChatBar />
+            <ContentContainer />
+        </div>
+    );
 };
 
 export default page;
