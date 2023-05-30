@@ -2,23 +2,21 @@ import { Request, Response } from "express";
 import UserModel from "../models/UserModel";
 
 export const registerUser = async (req: Request, res: Response) => {
-    const { email } = req.body;
-    console.log(email);
-    const user = await UserModel.findOne({ email });
-    console.log(user);
+    const { did } = req.body;
+    const user = await UserModel.findOne({ did });
     if (!user) {
-        await UserModel.create({
-            email,
+        const user = await UserModel.create({
+            did,
         });
-        res.status(201).json({ message: "User created" });
+        res.status(201).json({ message: user });
     } else {
         res.status(400).json({ message: "User already exists" });
     }
 };
 export const loginUser = async (req: Request, res: Response) => {
-    const { email } = req.body;
+    const { did } = req.body;
 
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ did });
     if (!user) {
         res.status(404).json({ message: "User not found" });
     } else {

@@ -1,10 +1,8 @@
 "use client";
-import { useUser } from "@/contexts/userContext";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const Login = () => {
-    const { setUser, user } = useUser();
     const [email, setEmail] = useState("");
     const router = useRouter();
 
@@ -17,7 +15,6 @@ const Login = () => {
             body: JSON.stringify({ email: email }),
         });
         const data = await res.json(); // later we can get user here
-        setUser(email);
         router.push("/chat");
     };
     return (

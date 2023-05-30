@@ -1,7 +1,6 @@
-import { UserProvider } from "@/contexts/userContext";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import ReactQueryProvider from "../providers/ReactQueryProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,7 +16,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <UserProvider>{children}</UserProvider>
+                <ReactQueryProvider>{children}</ReactQueryProvider>
             </body>
         </html>
     );
